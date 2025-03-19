@@ -23,11 +23,11 @@ workspace "Name" "Description" {
     }
 
     views {
-        systemContext ss "Diagram1" {
+        systemContext carRentalSystem "Diagram1" {
             include *
         }
 
-        container ss "Diagram2" {
+        container carRentalSystem "Diagram2" {
             include *
         }
 
