@@ -17,9 +17,9 @@ workspace "Name" "Description" {
         customer -> carRentalSystem "Returns car"
         admin -> carRentalSystem "Services car"
         admin -> carRentalSystem "Adds new car"
-        adminwebapp -> db "Add car"
-        adminwebapp -> db "Remove car"
-        rentalWebApp -> db "Update car"
+        # adminwebapp -> db "Add car"
+        # adminwebapp -> db "Remove car"
+        # rentalWebApp -> db "Update car"
     }
 
     views {
