@@ -3,16 +3,23 @@ workspace "Name" "Description" {
     !identifiers hierarchical
 
     model {
-        u = person "User"
-        ss = softwareSystem "Software System" {
-            wa = container "Web Application"
-            db = container "Database Schema" {
+        customer = person "Renter"
+        admin = person "Administrator"
+        carRentalSystem = softwareSystem "Car Rental System" {
+            rentalWebApp = container "Rental Web Application"
+            db = container "Car Rental Database" {
                 tags "Database"
             }
+            adminwebapp = container "Admin Web Application"
         }
 
-        u -> ss.wa "Uses"
-        ss.wa -> ss.db "Reads from and writes to"
+        customer -> carRentalSystem "Rents car"
+        customer -> carRentalSystem "Returns car"
+        admin -> carRentalSystem "Services car"
+        admin -> carRentalSystem "Adds new car"
+        adminwebapp -> db "Add car"
+        adminwebapp -> db "Remove car"
+        rentalWebApp -> db "Update car"
     }
 
     views {
@@ -28,17 +35,17 @@ workspace "Name" "Description" {
             element "Element" {
                 color #ffffff
             }
-            element "Person" {
+            element "Renter" {
                 background #199b65
                 shape person
             }
-            element "Software System" {
+            element "Car Rental System" {
                 background #1eba79
             }
             element "Container" {
                 background #23d98d
             }
-            element "Database" {
+            element "Car Rental Database" {
                 shape cylinder
             }
         }
