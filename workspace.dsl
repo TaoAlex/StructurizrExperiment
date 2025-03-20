@@ -94,9 +94,9 @@ workspace "Name" "Description" {
                 tags "Database"
             }
             sender = container "Invoice sender" {
-                email = "Email sender"
-                post = "Post sender"
-                SMS = "SMS sender"
+                email = container "Email sender"
+                post = container "Post sender"
+                SMS = container "SMS sender"
             }
             builder = container "Invoice builder"
 
