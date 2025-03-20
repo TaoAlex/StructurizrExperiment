@@ -129,7 +129,7 @@ workspace "Name" "Description" {
             autolayout lr
         }
 
-        container carRentalSystem {
+        container all {
             include *
             autolayout lr
         }
