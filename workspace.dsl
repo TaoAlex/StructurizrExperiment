@@ -44,7 +44,7 @@ workspace "Name" "Description" {
             carMaintenanceManager = container "Manager"
             db = container "Car maintenance database"
             incidentReportReceiver = container "Incident report receiver"
-            carMaintenanceScheduler = continer "Car maintenance scheduler"
+            carMaintenanceScheduler = container "Car maintenance scheduler"
             carMaintainanceCompletetionReportReceiver = container "Car maintenance completion report receiver"
 
             carMaintenanceManager -> carMaintenanceScheduler "Schedule car for maintenance"
