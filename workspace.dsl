@@ -130,7 +130,7 @@ workspace "Name" "Description" {
         }
 
         container carRentalSystem {
-            include element.parent==paymentSystem element.parent==InvoicingSystem element.parent==carRentalSystem
+            include element.parent==paymentSystem element.parent==InvoicingSystem element.parent==carRentalSystem element.parent==authorizationSoftware element.parent==authenticationSoftware element.parent==carLocationSystem element.parent==carMaintenanceSystem
             autolayout lr
         }
         
