@@ -129,8 +129,8 @@ workspace "Name" "Description" {
             autolayout lr
         }
 
-        container all {
-            include *
+        container carRentalSystem {
+            include element.parent==paymentSystem element.parent==InvoicingSystem element.parent==carRentalSystem
             autolayout lr
         }
         
