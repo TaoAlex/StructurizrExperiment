@@ -113,8 +113,8 @@ workspace "Name" "Description" {
 
         customer -> carRentalSystem.rentalWebApp "Rents car"
         customer -> carRentalSystem.rentalWebApp "Returns car"
-        admin -> carRentalSystem.adminwebapp "Services car"
-        admin -> carRentalSystem "Adds new car"
+        rentalAdmin -> carRentalSystem.adminwebapp "Services car"
+        rentalAdmin -> carRentalSystem "Adds new car"
         carRentalSystem.paymentAdapter -> paymentSystem.api "Pay for rental"
         carRentalSystem.invoicingAdapter -> invoicingSystem.api "Generate invoice for rental"
         carRentalSystem.carLocationAdapter -> carLocationSystem.api "Get car location"
