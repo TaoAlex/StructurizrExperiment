@@ -154,8 +154,8 @@ workspace "Name" "Description" {
         }
     }
 
-    configuration {
-        scope softwaresystem
-    }
+    # configuration {
+    #     scope softwaresystem
+    # }
 
 }
