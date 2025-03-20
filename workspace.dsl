@@ -11,6 +11,7 @@ workspace "Name" "Description" {
             db = container "Car Rental Database" {
                 tags "Database"
             }
+            api = container = "Rental back-end api"
             adminwebapp = container "Admin Web Application"
             authenticationAdapter = container "Authentication adapter"
             authorizationAdapter = container "Authorization adapter"
@@ -121,6 +122,8 @@ workspace "Name" "Description" {
         carRentalSystem.carLocationAdapter -> carLocationSystem.api "Get all cars in location"
         carRentalSystem.authorizationAdapter -> authorizationSoftware.authorizationApi "Authorize user"
         carRentalSystem.authenticationAdapter -> authenticationSoftware.api "Authenticate user"
+        carMaintenanceSystem.carMaintenanceManager -> carRentalSystem.api "Make car available for rental"
+        carMaintenanceSystem.carMaintenanceManager -> carRentalSystem.api "Make car unavailable for rental"
     }
 
     views {
