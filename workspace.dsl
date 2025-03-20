@@ -124,12 +124,42 @@ workspace "Name" "Description" {
     }
 
     views {
-        systemContext carRentalSystem "Diagram1" {
+        systemContext carRentalSystem "Car rental system context" {
             include *
             autolayout lr
         }
 
-        container carRentalSystem "Diagram2" {
+        container carRentalSystem "Car rental system" {
+            include *
+            autolayout lr
+        }
+        
+        container invoicingSystem "Invoicing system" {
+            include *
+            autolayout lr
+        }
+        
+        container paymentSystem "Payment system" {
+            include *
+            autolayout lr
+        }
+        
+        container authorizationSoftware "Authorization system" {
+            include *
+            autolayout lr
+        }
+        
+        container authenticationSoftware "Authentication system" {
+            include *
+            autolayout lr
+        }
+        
+        container carMaintenanceSystem "Car maintenance system" {
+            include *
+            autolayout lr
+        }
+        
+        container carLocationSystem "Car location system" {
             include *
             autolayout lr
         }
