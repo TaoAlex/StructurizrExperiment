@@ -11,7 +11,7 @@ workspace "Name" "Description" {
             db = container "Car Rental Database" {
                 tags "Database"
             }
-            api = container = "Rental back-end api"
+            api = container "Rental back-end api"
             adminwebapp = container "Admin Web Application"
             authenticationAdapter = container "Authentication adapter"
             authorizationAdapter = container "Authorization adapter"
@@ -89,7 +89,7 @@ workspace "Name" "Description" {
             userRoleManager -> db "remove user role"
             authorizationService -> db "Get user role"
         }
-        invoicingSystem = softwareSystem "Invoicing System" {
+        invoicingSystem = softwareSystem "Invoicing System" "test" "invoicing" {
             api = container "Front-end api"
             db = container "Invoicing database" {
                 tags "Database"
@@ -133,7 +133,7 @@ workspace "Name" "Description" {
         }
 
         container carRentalSystem {
-            include element.parent==paymentSystem element.parent==InvoicingSystem element.parent==carRentalSystem element.parent==authorizationSoftware element.parent==authenticationSoftware element.parent==carLocationSystem element.parent==carMaintenanceSystem
+            include element.tag==Person element.parent==paymentSystem element.parent==InvoicingSystem element.parent==carRentalSystem element.parent==authorizationSoftware element.parent==authenticationSoftware element.parent==carLocationSystem element.parent==carMaintenanceSystem
             autolayout lr
         }
         
@@ -169,9 +169,9 @@ workspace "Name" "Description" {
 
         styles {
             element "Element" {
-                color #ffffff
+                color #000000
             }
-            element "Renter" {
+            element "Person" {
                 background #199b65
                 shape person
             }
@@ -180,9 +180,17 @@ workspace "Name" "Description" {
             }
             element "Container" {
                 background #23d98d
+                shape roundedBox
             }
-            element "Car Rental Database" {
+            element "Database" {
                 shape cylinder
+                background #efefef
+            }
+            relationship "Relationship" {
+                color #000000
+            }
+            element "Software System" {
+                color #000000
             }
         }
     }
